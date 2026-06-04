@@ -25,6 +25,20 @@ data/raw/*
 data/processed/*
 data/folds/*
 
+# Out-of-scope local experiments for this unpublished BreakHis manuscript
+configs/LC25000/
+data/LC25000/
+outputs/aggregate_figures/LC25000/
+outputs/checkpoints/LC25000/
+outputs/logs/LC25000/
+outputs/figures/LC25000/
+outputs/predictions/LC25000/
+scripts/create_lc25000_*.py
+scripts/run_all_lc25000_folds.ps1
+lung_colon_image_set/
+lung_image_sets/
+colon_image_sets/
+
 # Keep directory structure if needed
 !outputs/checkpoints/.gitkeep
 !outputs/logs/.gitkeep

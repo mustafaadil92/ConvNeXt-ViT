@@ -1,6 +1,0 @@
-fold,train_count,val_count,test_count,train_csv,val_csv,test_csv
-1,15000,5000,5000,data\LC25000\lc25000_1_train.csv,data\LC25000\lc25000_1_val.csv,data\LC25000\lc25000_1_test.csv
-2,15000,5000,5000,data\LC25000\lc25000_2_train.csv,data\LC25000\lc25000_2_val.csv,data\LC25000\lc25000_2_test.csv
-3,15000,5000,5000,data\LC25000\lc25000_3_train.csv,data\LC25000\lc25000_3_val.csv,data\LC25000\lc25000_3_test.csv
-4,15000,5000,5000,data\LC25000\lc25000_4_train.csv,data\LC25000\lc25000_4_val.csv,data\LC25000\lc25000_4_test.csv
-5,15000,5000,5000,data\LC25000\lc25000_5_train.csv,data\LC25000\lc25000_5_val.csv,data\LC25000\lc25000_5_test.csv
