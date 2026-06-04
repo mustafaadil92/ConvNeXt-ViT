@@ -132,17 +132,6 @@ Compact manuscript-reported final results for the proposed ConvNeXt-ViT model on
 
 Full experimental details and complete results will be provided in the associated manuscript after publication.
 
-## Citation
-
-The article associated with this repository is not published yet. Please cite it as manuscript in preparation:
-
-```bibtex
-@misc{hussein_convnext_vit_histopathology,
-  title  = {Lightweight ConvNeXt-ViT for Explainable Breast Cancer Histopathology Classification},
-  author = {Hussein, Mustafa Adil and Huddin, Aqilah Baseri and Hashim, Fazida Hanim and Alani, Ahmed Sameer},
-  note   = {Manuscript in preparation}
-}
-```
 
 ## Funding
 
