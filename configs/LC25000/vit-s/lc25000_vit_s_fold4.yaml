@@ -1,0 +1,54 @@
+﻿project_name: vit_s_torch
+experiment_name: lc25000_vits_fold4
+
+seed: 42
+device: cuda   # auto | cpu | cuda
+deterministic: false
+
+data:
+  train_csv: "data/LC25000/lc25000_4_train.csv"
+  val_csv: "data/LC25000/lc25000_4_val.csv"
+  test_csv: "data/LC25000/lc25000_4_test.csv"
+  image_col: image_path
+  label_col: label
+  num_classes: 5
+  input_size: 224
+  num_workers: 8
+  pin_memory: true
+  persistent_workers: false
+  prefetch_factor: 4
+
+train:
+  batch_size: 64
+  epochs: 50
+  amp: true
+  drop_last: true
+  gradient_clip_norm: null
+
+optimizer:
+  name: adamw
+  lr: 0.0001
+  weight_decay: 0.0001
+
+scheduler:
+  name: cosine
+  t_max: 100
+  min_lr: 0.000001
+
+model:
+  name: vit-s
+  patch_size: 16
+  dropout: 0.1
+  embed_dim: 384
+  num_heads: 6
+  depth: 12
+  mlp_ratio: 4.0
+
+output:
+  checkpoint_dir: outputs/checkpoints/LC25000/vit-s
+  log_dir: outputs/logs/LC25000/vit-s
+  figure_dir: outputs/figures/LC25000/vit-s
+  predictions_dir: outputs/predictions/LC25000/vit-s
+  save_best_only: true
+  monitor: val_loss
+  mode: min

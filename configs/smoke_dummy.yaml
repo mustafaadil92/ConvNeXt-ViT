@@ -1,0 +1,46 @@
+project_name: convnext_vit_torch
+experiment_name: smoke_dummy
+
+seed: 42
+device: auto
+deterministic: false
+
+data:
+  train_csv: "data/folds/dummy_train.csv"
+  val_csv: "data/folds/dummy_train.csv"
+  test_csv: ""
+  image_col: image_path
+  label_col: label
+  num_classes: 3
+  input_size: 224
+  num_workers: 0        # safer for Windows smoke tests
+  pin_memory: true
+
+train:
+  batch_size: 2
+  epochs: 1
+  amp: false
+  gradient_clip_norm: null
+
+optimizer:
+  name: adamw
+  lr: 0.0001
+  weight_decay: 0.0001
+
+scheduler:
+  name: cosine
+  t_max: 1
+  min_lr: 0.000001
+
+model:
+  name: convnext_vit_hybrid
+  dropout: 0.1
+
+output:
+  checkpoint_dir: outputs/checkpoints
+  log_dir: outputs/logs
+  figure_dir: outputs/figures
+  predictions_dir: outputs/predictions
+  save_best_only: true
+  monitor: val_loss
+  mode: min

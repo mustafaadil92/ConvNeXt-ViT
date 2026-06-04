@@ -1,0 +1,53 @@
+﻿project_name: convnext_torch
+experiment_name: lc25000_convnext_fold4
+
+seed: 42
+device: cuda   # auto | cpu | cuda
+deterministic: false
+
+data:
+  train_csv: "data/LC25000/lc25000_4_train.csv"
+  val_csv: "data/LC25000/lc25000_4_val.csv"
+  test_csv: "data/LC25000/lc25000_4_test.csv"
+  image_col: image_path
+  label_col: label
+  num_classes: 5
+  input_size: 224
+  num_workers: 8
+  pin_memory: true
+  persistent_workers: false
+  prefetch_factor: 4
+
+train:
+  batch_size: 16
+  epochs: 50
+  amp: true
+  drop_last: true
+  gradient_clip_norm: null
+  memory_cleanup_interval: 1
+  empty_cuda_cache_interval: 10
+
+optimizer:
+  name: adamw
+  lr: 0.0001
+  weight_decay: 0.0001
+
+scheduler:
+  name: cosine
+  t_max: 100
+  min_lr: 0.000001
+
+model:
+  name: convnext
+  variant: convnext_tiny
+  pretrained: false
+  dropout: 0.1
+
+output:
+  checkpoint_dir: outputs/checkpoints/LC25000/convnext
+  log_dir: outputs/logs/LC25000/convnext
+  figure_dir: outputs/figures/LC25000/convnext
+  predictions_dir: outputs/predictions/LC25000/convnext
+  save_best_only: true
+  monitor: val_loss
+  mode: min

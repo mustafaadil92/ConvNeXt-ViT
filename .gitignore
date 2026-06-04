@@ -1,0 +1,35 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+.venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+
+# Outputs (generated files)
+outputs/checkpoints/*
+outputs/logs/*
+outputs/figures/*
+outputs/predictions/*
+
+# Data (usually not committed)
+data/raw/*
+data/processed/*
+data/folds/*
+
+# Keep directory structure if needed
+!outputs/checkpoints/.gitkeep
+!outputs/logs/.gitkeep
+!outputs/figures/.gitkeep
+!outputs/predictions/.gitkeep
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/folds/.gitkeep

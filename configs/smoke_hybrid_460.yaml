@@ -1,0 +1,51 @@
+project_name: convnext_vit_torch
+experiment_name: smoke_hybrid_460
+
+seed: 42
+device: auto
+deterministic: false
+
+data:
+  train_csv: "data/folds/dummy_train.csv"
+  val_csv: "data/folds/dummy_train.csv"
+  test_csv: ""
+  image_col: image_path
+  label_col: label
+  num_classes: 8
+  input_size: [460, 460]
+  num_workers: 0        # safer on Windows for smoke test
+  pin_memory: true
+
+train:
+  batch_size: 1         # keep tiny because 460x460 + hybrid tokens is heavier
+  epochs: 1
+  amp: false            # disable AMP for first architecture smoke test
+  gradient_clip_norm: null
+
+optimizer:
+  name: adamw
+  lr: 0.0001
+  weight_decay: 0.0001
+
+scheduler:
+  name: cosine
+  t_max: 1
+  min_lr: 0.000001
+
+model:
+  name: convnext_vit_hybrid
+  in_channels: 3
+  patch_size: 20
+  embed_dim: 128
+  num_heads: 4
+  num_layers: 8
+  dropout: 0.1
+
+output:
+  checkpoint_dir: outputs/checkpoints
+  log_dir: outputs/logs
+  figure_dir: outputs/figures
+  predictions_dir: outputs/predictions
+  save_best_only: true
+  monitor: val_loss
+  mode: min
