@@ -1,4 +1,4 @@
-# Lightweight ConvNeXt-ViT for Explainable Breast Cancer Histopathology Classification
+# A Hybrid ConvNeXt–ViT for Multiclass Breast Cancer Histopathology with Enabling Standard CAMs 
 
 PyTorch implementation of a lightweight ConvNeXt-ViT hybrid model for breast cancer histopathology classification using the BreakHis dataset.
 
